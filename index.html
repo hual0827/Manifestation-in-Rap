@@ -1,223 +1,235 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Manifestation in Rap</title>
-	<meta name="description" content="Scrollama: Sticky Side Example" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="style.css" />
-	<style>
-		#scrolly {
-			position: relative;
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			background-color: #f3f3f3;
-			padding: 1rem;
-		}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
 
-		#scrolly>* {
-			-webkit-box-flex: 1;
-			-ms-flex: 1;
-			flex: 1;
-		}
+    <style>
+      .filler {
+height: 20rem;
+text-align: center;
+}
+#scrolly-side .scrolly {
+display: flex;
+max-width: 60rem;
+margin: 3rem auto;
+background-color: #f4f4f4;
+padding: 1rem;
+}
+#scrolly-side .scrolly > * {
+flex: 1;
+}
+#scrolly-side .scrolly article {
+padding-right: 1rem;
+max-width: 30rem;
+}
+#scrolly-side .scrolly article .step {
+min-height: auto;
+margin-bottom: 1rem;
+background-color: #5b5b5b;
+transition: background-color 250ms ease-in-out;
+}
+#scrolly-side .scrolly article .step:last-of-type {
+margin-bottom: 0;
+}
+#scrolly-side .scrolly article .step.is-active {
+background-color: #008080;
+}
+#scrolly-side .scrolly article .step p {
+margin: 0;
+padding: 1rem;
+text-align: center;
+font-weight: 400;
+color: #f4f4f4;
+}
+#scrolly-side .scrolly figure.sticky {
+position: sticky;
+width: 1080px;
+height: 100vh;
+background: #969696;
+margin: 0;
+top: 25vh;
+left: 0;
+transition: background-image 1s ease-in-out;
+}
+#scrolly-side .scrolly figure.sticky .bar-outer {
+position: absolute;
+top: 50%;
+left: 5%;
+transform: translateY(-50%);
+width: 90%;
+height: 4rem;
+background-color: #fff;
+}
+#scrolly-side .scrolly figure.sticky .bar-inner {
+width: 10%;
+height: 100%;
+transition: width 1s ease-in-out;
+background-color: #daa520;
+}
 
-		article {
-			position: relative;
-			padding: 0 1rem;
-			max-width: 20rem;
-		}
+#index-0 {
+  z-index: 999;
+  position: absolute;
+  width: 639px;
+}
 
-		figure {
-			position: -webkit-sticky;
-			position: sticky;
-			width: 100%;
-			margin: 0;
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-			background-color: #8a8a8a;
-			z-index: 0;
-		}
+#index-1, #index-2 {
+  z-index: 0;
+  position: absolute;
+  width: 639px;
+}
+ </style>
 
-		figure p {
-			text-align: center;
-			padding: 1rem;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			-moz-transform: translate(-50%, -50%);
-			-webkit-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-			font-size: 8rem;
-			font-weight: 900;
-			color: #fff;
-		}
-
-		.step {
-			margin: 0 auto 2rem auto;
-			background-color: #3b3b3b;
-			color: #fff;
-		}
-
-		.step:last-child {
-			margin-bottom: 0;
-		}
-
-		.step.is-active {
-			background-color: goldenrod;
-			color: #3b3b3b;
-		}
-
-		.step p {
-			text-align: center;
-			padding: 1rem;
-			font-size: 1.5rem;
-		}
-	</style>
-</head>
-
+  </head>
 <body>
-	<!-- <a href="https://github.com/russellsamora/scrollama" target="_blank" class="github-corner"
-		aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250"
-			style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
-			<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-			<path
-				d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-				fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-			<path
-				d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-				fill="currentColor" class="octo-body"></path>
-		</svg></a> -->
-	<main>
-		<!-- <nav>
-			<a href="https://github.com/russellsamora/scrollama">scrollama.js</a>
-			<div class="nav__examples">
-				<p>Examples:</p>
-				<a href="https://russellsamora.github.io/scrollama/basic">Basic</a>
-				<a href="https://russellsamora.github.io/scrollama/progress">Progress</a>
-				<a href="https://russellsamora.github.io/scrollama/sticky-side">Sticky Side</a>
-				<a href="https://russellsamora.github.io/scrollama/sticky-overlay">Sticky Overlay</a>
-				<a href="https://russellsamora.github.io/scrollama/mobile-pattern">Mobile Pattern</a>
-			</div>
-		</nav> -->
-		<section id="intro">
-			<h1 class="intro__hed">Manifestation in Rap</h1>
-			<p class="intro__dek">
-				Quantitative analysis on how rappers shape their own destiny
-			</p>
-		</section>
+   
+</head>
+<body>
+    <section id="intro">
+        <h1 class="intro__hed">Manifestation in Rap</h1>
+        <p class="intro__dek">
+            Quantitative analysis on how rappers shape their own destiny
+        </p>
+    </section>  
+      <section id='scrolly-side'>
+        
+        <div class='scrolly'>
+          
+          <!--  step text   -->
+            <article>
+            <div class='step' data-url='visualisation/11761839' data-index='0'>
+                <p>MONEY</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id eros lorem. Sed lobortis lectus ac interdum mattis. Ut risus arcu, pellentesque ut tortor sit amet, dignissim pellentesque augue. Vestibulum ultricies consectetur neque id commodo. Proin hendrerit leo mi, sit amet varius augue imperdiet quis. Maecenas mi enim, euismod sed nisi vel, tincidunt tempus velit. Pellentesque nec lorem diam. Aliquam ornare scelerisque ante, in iaculis diam placerat at. Vestibulum tincidunt ut mauris vitae rhoncus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam convallis diam massa, vel posuere orci gravida at. Sed massa lectus, congue in pharetra fermentum, varius nec lacus. Ut volutpat non ipsum ut porttitor. Nulla tempor, mi non eleifend tempus, magna nulla rhoncus quam, vel sodales diam augue et neque.
 
-		<section id="scrolly">
-			<article>
-				<div class="step" data-step="1">
-					<p>MONEY</p>
-				</div>
-				<div class="step" data-step="2">
-					<p>DRUGS</p>
-				</div>
-				<div class="step" data-step="3">
-					<p>VIOLENCE</p>
-				</div>
-				<div class="step" data-step="4">
-					<p>DEATH</p>
-				</div>
-			</article>
+                  Sed erat odio, condimentum in tristique nec, sagittis nec eros. Quisque faucibus velit nec neque pretium, quis eleifend odio blandit. Suspendisse tristique nisl eget accumsan accumsan. Curabitur in egestas quam, ac malesuada ipsum. Maecenas pulvinar, nisl sed vestibulum volutpat, nunc nisl sollicitudin urna, sed efficitur metus nisi sed mi. Nam commodo dui egestas euismod varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae porta arcu. Praesent laoreet vitae ipsum vel euismod. Vestibulum risus neque, elementum at efficitur ut, finibus facilisis tellus. Maecenas vel placerat nulla. Phasellus vel tristique sapien, nec pharetra ipsum. Vivamus facilisis pretium libero, id facilisis risus.
+                  
+                  Aliquam molestie, purus eget rhoncus tincidunt, ipsum ex varius purus, non tincidunt massa ante sit amet neque. Duis sem nulla, lobortis et metus vel, elementum eleifend lorem. Nam rhoncus ac sapien sit amet tincidunt. Sed in malesuada quam. In tincidunt sem a ante vestibulum viverra. Vestibulum sed ante placerat, convallis urna ut, finibus quam. Suspendisse faucibus eleifend venenatis. Praesent fringilla vestibulum auctor. Duis vitae posuere urna.
+                  
+                  Phasellus sit amet porta ex. Vivamus vestibulum lorem vulputate arcu faucibus fringilla. Vivamus dapibus est a ligula lobortis, nec tincidunt arcu tincidunt. Integer a ante ante. In consequat et eros a aliquet. In et urna a ligula tempor elementum. Morbi convallis ante eget ipsum vehicula, et tempor ligula consectetur. Pellentesque ac neque neque. Cras a mauris orci. Proin porttitor ipsum pharetra auctor tristique. Ut ac eleifend eros, a lacinia leo. Cras quis nisl mi. Cras ipsum ligula, fringilla ac lectus sit amet, lacinia fermentum tellus. Fusce molestie lectus in tortor imperdiet lacinia. Sed ac gravida risus.
+                  
+                  Quisque eget venenatis mauris. Nulla facilisi. Mauris elementum nibh porttitor mauris dignissim tempus at sed nunc. Proin ac elit tincidunt, blandit urna in, dictum odio. Pellentesque eget mi mi. Vivamus at tellus ut erat maximus porta id id turpis. In hac habitasse platea dictumst. Curabitur id luctus tortor, nec viverra justo.</p>
+            </div>
+            <div class='step' data-url='visualisation/11761938' data-index='1'>
+               <p>DRUGS</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id eros lorem. Sed lobortis lectus ac interdum mattis. Ut risus arcu, pellentesque ut tortor sit amet, dignissim pellentesque augue. Vestibulum ultricies consectetur neque id commodo. Proin hendrerit leo mi, sit amet varius augue imperdiet quis. Maecenas mi enim, euismod sed nisi vel, tincidunt tempus velit. Pellentesque nec lorem diam. Aliquam ornare scelerisque ante, in iaculis diam placerat at. Vestibulum tincidunt ut mauris vitae rhoncus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam convallis diam massa, vel posuere orci gravida at. Sed massa lectus, congue in pharetra fermentum, varius nec lacus. Ut volutpat non ipsum ut porttitor. Nulla tempor, mi non eleifend tempus, magna nulla rhoncus quam, vel sodales diam augue et neque.
 
-			<figure id="actualFigure">
-			</figure>
-		</section>
+                Sed erat odio, condimentum in tristique nec, sagittis nec eros. Quisque faucibus velit nec neque pretium, quis eleifend odio blandit. Suspendisse tristique nisl eget accumsan accumsan. Curabitur in egestas quam, ac malesuada ipsum. Maecenas pulvinar, nisl sed vestibulum volutpat, nunc nisl sollicitudin urna, sed efficitur metus nisi sed mi. Nam commodo dui egestas euismod varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae porta arcu. Praesent laoreet vitae ipsum vel euismod. Vestibulum risus neque, elementum at efficitur ut, finibus facilisis tellus. Maecenas vel placerat nulla. Phasellus vel tristique sapien, nec pharetra ipsum. Vivamus facilisis pretium libero, id facilisis risus.
+                
+                Aliquam molestie, purus eget rhoncus tincidunt, ipsum ex varius purus, non tincidunt massa ante sit amet neque. Duis sem nulla, lobortis et metus vel, elementum eleifend lorem. Nam rhoncus ac sapien sit amet tincidunt. Sed in malesuada quam. In tincidunt sem a ante vestibulum viverra. Vestibulum sed ante placerat, convallis urna ut, finibus quam. Suspendisse faucibus eleifend venenatis. Praesent fringilla vestibulum auctor. Duis vitae posuere urna.
+                
+                Phasellus sit amet porta ex. Vivamus vestibulum lorem vulputate arcu faucibus fringilla. Vivamus dapibus est a ligula lobortis, nec tincidunt arcu tincidunt. Integer a ante ante. In consequat et eros a aliquet. In et urna a ligula tempor elementum. Morbi convallis ante eget ipsum vehicula, et tempor ligula consectetur. Pellentesque ac neque neque. Cras a mauris orci. Proin porttitor ipsum pharetra auctor tristique. Ut ac eleifend eros, a lacinia leo. Cras quis nisl mi. Cras ipsum ligula, fringilla ac lectus sit amet, lacinia fermentum tellus. Fusce molestie lectus in tortor imperdiet lacinia. Sed ac gravida risus.
+                
+                Quisque eget venenatis mauris. Nulla facilisi. Mauris elementum nibh porttitor mauris dignissim tempus at sed nunc. Proin ac elit tincidunt, blandit urna in, dictum odio. Pellentesque eget mi mi. Vivamus at tellus ut erat maximus porta id id turpis. In hac habitasse platea dictumst. Curabitur id luctus tortor, nec viverra justo.</p>
+            </div>
+            <div class='step' data-url='visualisation/11762622' data-index='2'>
+              <p>VIOLENCE</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id eros lorem. Sed lobortis lectus ac interdum mattis. Ut risus arcu, pellentesque ut tortor sit amet, dignissim pellentesque augue. Vestibulum ultricies consectetur neque id commodo. Proin hendrerit leo mi, sit amet varius augue imperdiet quis. Maecenas mi enim, euismod sed nisi vel, tincidunt tempus velit. Pellentesque nec lorem diam. Aliquam ornare scelerisque ante, in iaculis diam placerat at. Vestibulum tincidunt ut mauris vitae rhoncus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam convallis diam massa, vel posuere orci gravida at. Sed massa lectus, congue in pharetra fermentum, varius nec lacus. Ut volutpat non ipsum ut porttitor. Nulla tempor, mi non eleifend tempus, magna nulla rhoncus quam, vel sodales diam augue et neque.
 
-		<section id="outro"></section>
-	</main>
+                Sed erat odio, condimentum in tristique nec, sagittis nec eros. Quisque faucibus velit nec neque pretium, quis eleifend odio blandit. Suspendisse tristique nisl eget accumsan accumsan. Curabitur in egestas quam, ac malesuada ipsum. Maecenas pulvinar, nisl sed vestibulum volutpat, nunc nisl sollicitudin urna, sed efficitur metus nisi sed mi. Nam commodo dui egestas euismod varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae porta arcu. Praesent laoreet vitae ipsum vel euismod. Vestibulum risus neque, elementum at efficitur ut, finibus facilisis tellus. Maecenas vel placerat nulla. Phasellus vel tristique sapien, nec pharetra ipsum. Vivamus facilisis pretium libero, id facilisis risus.
+                
+                Aliquam molestie, purus eget rhoncus tincidunt, ipsum ex varius purus, non tincidunt massa ante sit amet neque. Duis sem nulla, lobortis et metus vel, elementum eleifend lorem. Nam rhoncus ac sapien sit amet tincidunt. Sed in malesuada quam. In tincidunt sem a ante vestibulum viverra. Vestibulum sed ante placerat, convallis urna ut, finibus quam. Suspendisse faucibus eleifend venenatis. Praesent fringilla vestibulum auctor. Duis vitae posuere urna.
+                
+                Phasellus sit amet porta ex. Vivamus vestibulum lorem vulputate arcu faucibus fringilla. Vivamus dapibus est a ligula lobortis, nec tincidunt arcu tincidunt. Integer a ante ante. In consequat et eros a aliquet. In et urna a ligula tempor elementum. Morbi convallis ante eget ipsum vehicula, et tempor ligula consectetur. Pellentesque ac neque neque. Cras a mauris orci. Proin porttitor ipsum pharetra auctor tristique. Ut ac eleifend eros, a lacinia leo. Cras quis nisl mi. Cras ipsum ligula, fringilla ac lectus sit amet, lacinia fermentum tellus. Fusce molestie lectus in tortor imperdiet lacinia. Sed ac gravida risus.
+                
+                Quisque eget venenatis mauris. Nulla facilisi. Mauris elementum nibh porttitor mauris dignissim tempus at sed nunc. Proin ac elit tincidunt, blandit urna in, dictum odio. Pellentesque eget mi mi. Vivamus at tellus ut erat maximus porta id id turpis. In hac habitasse platea dictumst. Curabitur id luctus tortor, nec viverra justo.</p>
+            </div>
+            <div class='step' data-url='visualisation/11761938' data-index='3'>
+              <p>DEATH</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id eros lorem. Sed lobortis lectus ac interdum mattis. Ut risus arcu, pellentesque ut tortor sit amet, dignissim pellentesque augue. Vestibulum ultricies consectetur neque id commodo. Proin hendrerit leo mi, sit amet varius augue imperdiet quis. Maecenas mi enim, euismod sed nisi vel, tincidunt tempus velit. Pellentesque nec lorem diam. Aliquam ornare scelerisque ante, in iaculis diam placerat at. Vestibulum tincidunt ut mauris vitae rhoncus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam convallis diam massa, vel posuere orci gravida at. Sed massa lectus, congue in pharetra fermentum, varius nec lacus. Ut volutpat non ipsum ut porttitor. Nulla tempor, mi non eleifend tempus, magna nulla rhoncus quam, vel sodales diam augue et neque.
 
-	<!-- <div class='debug'></div> -->
-	<script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
-	<script src="scrollama.min.js"></script>
-	<script>
-		// using d3 for convenience
-		var main = d3.select("main");
-		var scrolly = main.select("#scrolly");
-		var figure = scrolly.select("figure");
-		var article = scrolly.select("article");
-		var step = article.selectAll(".step");
-		var actualFigure = document.getElementById('actualFigure');
+                Sed erat odio, condimentum in tristique nec, sagittis nec eros. Quisque faucibus velit nec neque pretium, quis eleifend odio blandit. Suspendisse tristique nisl eget accumsan accumsan. Curabitur in egestas quam, ac malesuada ipsum. Maecenas pulvinar, nisl sed vestibulum volutpat, nunc nisl sollicitudin urna, sed efficitur metus nisi sed mi. Nam commodo dui egestas euismod varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae porta arcu. Praesent laoreet vitae ipsum vel euismod. Vestibulum risus neque, elementum at efficitur ut, finibus facilisis tellus. Maecenas vel placerat nulla. Phasellus vel tristique sapien, nec pharetra ipsum. Vivamus facilisis pretium libero, id facilisis risus.
+                
+                Aliquam molestie, purus eget rhoncus tincidunt, ipsum ex varius purus, non tincidunt massa ante sit amet neque. Duis sem nulla, lobortis et metus vel, elementum eleifend lorem. Nam rhoncus ac sapien sit amet tincidunt. Sed in malesuada quam. In tincidunt sem a ante vestibulum viverra. Vestibulum sed ante placerat, convallis urna ut, finibus quam. Suspendisse faucibus eleifend venenatis. Praesent fringilla vestibulum auctor. Duis vitae posuere urna.
+                
+                Phasellus sit amet porta ex. Vivamus vestibulum lorem vulputate arcu faucibus fringilla. Vivamus dapibus est a ligula lobortis, nec tincidunt arcu tincidunt. Integer a ante ante. In consequat et eros a aliquet. In et urna a ligula tempor elementum. Morbi convallis ante eget ipsum vehicula, et tempor ligula consectetur. Pellentesque ac neque neque. Cras a mauris orci. Proin porttitor ipsum pharetra auctor tristique. Ut ac eleifend eros, a lacinia leo. Cras quis nisl mi. Cras ipsum ligula, fringilla ac lectus sit amet, lacinia fermentum tellus. Fusce molestie lectus in tortor imperdiet lacinia. Sed ac gravida risus.
+                
+                Quisque eget venenatis mauris. Nulla facilisi. Mauris elementum nibh porttitor mauris dignissim tempus at sed nunc. Proin ac elit tincidunt, blandit urna in, dictum odio. Pellentesque eget mi mi. Vivamus at tellus ut erat maximus porta id id turpis. In hac habitasse platea dictumst. Curabitur id luctus tortor, nec viverra justo.</p>
+            </div>
+            </article>
+          
+           <!--  sticky graphic   -->
+            <figure class='sticky'>
+                <div id='index-0' class="flourish-embed flourish-chart" data-src="visualisation/11761839"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                <div id='index-1' class="flourish-embed flourish-chart" data-src="visualisation/11761938"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+			          <div id='index-2' class="flourish-embed flourish-chart" data-src="visualisation/11762622"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+            </figure>
+          
+        </div>
+        
+      </section>
 
-		console.log(actualFigure);
+      
 
-		// initialize the scrollama
-		var scroller = scrollama();
+    <script src="https://unpkg.com/d3@5.4.0/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/enter-view@1.0.0/enter-view.min.js"></script>
+    <script src="https://unpkg.com/stickyfilljs@2.0.5/dist/stickyfill.js"></script>
+    <script>
+        const container = d3.select('#scrolly-side');
+const stepSel = container.selectAll('.step');
 
-		// generic window resize listener event
-		function handleResize() {
-			// 1. update height of step elements
-			var stepH = Math.floor(window.innerHeight * 0.75);
-			step.style("height", stepH + "px");
+function updateChart(index) {
+    var nMinus1 = index - 1;
+    var nPlus1 = index + 1;
 
-			var figureHeight = window.innerHeight / 2;
-			var figureMarginTop = (window.innerHeight - figureHeight) / 2;
-
-			figure
-				.style("height", figureHeight + "px")
-				.style("top", figureMarginTop + "px");
-
-			// 3. tell scrollama to update new element dimensions
-			scroller.resize();
-		}
-
-		// scrollama event handlers
-		function handleStepEnter(response) {
-			console.log(response["index"]);
-			// response = { element, direction, index }
-
-			// add color to current step only
-			step.classed("is-active", function (d, i) {
-				return i === response.index;
-			});
-
-			/////////////////// LINKS FOR THE EMBEDDED FLOURISH VIZES /////////////////////
-			// <div class="flourish-embed flourish-chart" data-src="visualisation/11761839"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-			// <div class="flourish-embed flourish-chart" data-src="visualisation/11761938"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-			// <div class="flourish-embed flourish-chart" data-src="visualisation/11762622"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-
-			switch(response["index"]) {
+  const sel = container.select(`[data-index='${index}']`);
+  const width = sel.attr('data-width');
+  
+  const picture = sel.attr('data-url');
+  stepSel.classed('is-active', (d, i) => i === index);
+  //container.select(`['#index-'${index}']`).style('display', 'block');
+  const sticky = container.select('.sticky');
+  
+  switch(index) {
 				case 0:
+				sticky.select('#index-0').style('z-index', '999'); 
+        sticky.select('#index-1').style('z-index', '0');
 				
 				break;
 				
 				case 1:
-						
+        sticky.select('#index-0').style('z-index', '0'); 
+        sticky.select('#index-1').style('z-index', '999');
 				break;
 
 				case 2:
 				
 				break;
 			}
-			// update graphic based on step
-		}
 
-		function init() {
+  //console.log(sticky.select('div'));
 
-			// 1. force a resize on load to ensure proper dimensions are sent to scrollama
-			handleResize();
+  
+  //container.select('.sticky').style('background-image', 'url('+picture+')');
+  container.select('.flourish-embed').attr('data-src', picture);
+}
 
-			// 2. setup the scroller passing options
-			// 		this will also initialize trigger observations
-			// 3. bind scrollama event handlers (this can be chained like below)
-			scroller
-				.setup({
-					step: "#scrolly article .step",
-					offset: 0.33,
-					debug: false
-				})
-				.onStepEnter(handleStepEnter);
-		}
+function init() {
+  Stickyfill.add(d3.select('.sticky').node());
 
-		// kick things off
-		init();
-	</script>
+  enterView({
+    selector: stepSel.nodes(),
+    offset: 0.5,
+    enter: el => {
+      const index = +d3.select(el).attr('data-index');
+      updateChart(index);
+    },
+    exit: el => {
+      let index = +d3.select(el).attr('data-index');
+      index = Math.max(0, index - 1);
+      updateChart(index);
+    } });
+
+}
+
+init();
+    </script>
 </body>
+</html>
 
+    
+</body>
 </html>
