@@ -11,13 +11,67 @@
   <style>
     #intro {
       max-width: 80rem;
+      margin-bottom: 0em;
+    }
+
+    #intro2 p {
+      text-align: center;
+      font-size: smaller;
+      margin-top: 3em;
       margin-bottom: 3em;
     }
 
-    #intro2 p{
-      margin-left: 200px;
-      margin-right: 200px;
-      margin-bottom: 75px;
+    #intro3 {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      font-size: smaller;
+    }
+
+    #intro3 p {
+      flex: 1;
+      padding-left: 10%;
+      text-align: left;
+      top: 50%;
+    }
+
+    #intro3 img {
+      flex: 2;
+      padding-right: 10%;
+      padding-left: 10%;
+      max-width: 50%;
+    }
+
+    #intro4 p {
+      text-align: center;
+      font-size: smaller;
+      margin-top: 5em;
+      margin-bottom: 5em;
+      padding-left: 25%;
+      padding-right: 25%;
+    }
+
+    #intro5 {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      font-size: smaller;
+    }
+
+    #intro5 p {
+      flex: 1;
+      padding-left: 10%;
+      text-align: left;
+      top: 50%;
+    }
+
+    #intro5 img {
+      flex: 2;
+      padding-right: 10%;
+      padding-left: 10%;
+      max-width: 50%;
     }
 
     .filler {
@@ -27,9 +81,8 @@
 
     #scrolly-side .scrolly {
       display: flex;
-      max-width: 100rem;
+      width: 95%;
       margin: 3rem auto;
-      background-color: #f4f4f4;
       padding: 1rem;
     }
 
@@ -46,7 +99,8 @@
       min-height: auto;
       margin-top: 10em;
       margin-bottom: 10em;
-      background-color: #f4f4f4;
+      background-color: #BFBFBF;
+      border-radius: 15px;
       transition: background-color 250ms ease-in-out;
     }
 
@@ -55,7 +109,8 @@
     }
 
     #scrolly-side .scrolly article .step.is-active {
-      background-color: #353535;
+      background-color: #282828;
+      border-radius: 15px;
     }
 
     #scrolly-side .scrolly article .step h2 {
@@ -67,44 +122,27 @@
 
     #scrolly-side .scrolly article .step p {
       margin: 0;
-      padding: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
       text-align: left;
-      font-weight: 400;
-      color: #f4f4f4;
+      font-size: large;
+      color: #BFBFBF;
     }
 
     #scrolly-side .scrolly figure.sticky {
       position: sticky;
       width: 1080px;
       height: 100vh;
-      background: #f4f4f4;
       margin: 0;
-      top: 25vh;
-      left: 0;
+      top: 7vh;
       transition: background-image 1s ease-in-out;
-    }
-
-    #scrolly-side .scrolly figure.sticky .bar-outer {
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      transform: translateY(-50%);
-      width: 90%;
-      height: 4rem;
-      background-color: #fff;
-    }
-
-    #scrolly-side .scrolly figure.sticky .bar-inner {
-      width: 10%;
-      height: 100%;
-      transition: width 1s ease-in-out;
-      background-color: #daa520;
     }
 
     #index-0 {
       z-index: 999;
       position: absolute;
-      width: 639px;
+      width: 100%;
     }
 
     #index-1,
@@ -112,7 +150,22 @@
     #index-3 {
       z-index: 0;
       position: absolute;
-      width: 639px;
+      width: 100%;
+    }
+
+    article #list p {
+      text-align: center;
+      font-size: smaller;
+    }
+
+    a:link,
+    a:visited {
+      color: #D40000;
+    }
+
+    a:hover,
+    a:active {
+      color: #FC7E1D;
     }
 
     #conclusion {
@@ -126,12 +179,11 @@
       margin-right: 200px;
       margin-bottom: 200px;
     }
-
   </style>
 
 </head>
 
-<body>
+<body id="body">
 
   </head>
 
@@ -143,7 +195,12 @@
       </p>
     </section>
     <section id="intro2">
-      <p>Have you noticed that a lot of rappers have been dying from either drugs or violence? Like, even more than
+      <p><i>"To everyone who sell me drugs: <br>
+          Don't mix it with that bullshit, I'm hopin' not to join the 27 Club"</i><br>
+        - Mac Miller</p>
+
+
+      <!-- <p>Have you noticed that a lot of rappers have been dying from either drugs or violence? Like, even more than
         usual? And that they tend to rap a lot about those very topics?
         Alright, I'll cool it with the rhetorical questions. Mac Miller and Juice WRLD, both rappers loved by the world,
         died of overdosing in recent years. Both seemed to rap heavily
@@ -151,7 +208,45 @@
         death? Ok, now I'm really done with the rhetorical questions.</p>
       <p>To quantitatively test this hypothesis, I took ____ rappers, aggregated 35,000 lyrics for each rapper (drawing
         from their most popular albums) and counted the number of times
-        they mentioned drugs using a simple keyword search.</p>
+        they mentioned drugs using a simple keyword search.</p> -->
+    </section>
+
+    <section id="intro3">
+      <p>Malcolm James McCormick, known professionally as Mac Miller, did not join the 27 Club. He was one year away,
+        dying from a drug overdose at 26. About a month before his death, he released an album called Swimming in
+        August. <br><br>One of the most talked
+        about lines from the album is "That Mercedes drove me crazy, I was speedin'." How come that line got so much
+        attention?
+        Well, a few months before Swimming was released, he was arrested under suspicion of DUI after crashing his
+        Mercedes into a power pole. <br><br>
+        Many listeners assumed he wrote the song after crashing the car. However, here is a quote from Mac Miller in an
+        interview with Craig Jenkins...
+      </p>
+      <img src="mac-miller.jpg" alt="Mac Miller">
+    </section>
+
+    <section id="intro4">
+      <p><i>"Stuff like that always happens with my music. These themes will just connect because of, maybe, a state of
+          mind I was in. [...]
+          I’ll say a line like, “that Mercedes drove me crazy, I was speeding” I made that song way before the shit went
+          down. You just have
+          to get out of your own way, and everything will just connect for itself. [...] the story writes itself."
+        </i></p>
+    </section>
+
+    <section id="intro5">
+      <p>Even more recently, Jarad Anthony Higgins, AKA Juice WRLD, also died of an overdose. How come these rappers,
+        loved by the world, are dying?
+        As you will see in the dataset, Juice WRLD rapped heavily about drugs.<br><br>
+        Maybe artists are just making art about what they already know. Maybe their rhymes are perpetuating their
+        habits.
+        Maybe being in the rap game pushes them to make explicit art, eventually manifesting in their real lives. Maybe
+        all of the above.
+        I'll let you decide, but I'll give you some numbers that might help.<br><br>
+        I took ____ rappers, aggregated 35,000 lyrics from each rapper (drawing from their most popular albums) and counted the number of times
+        they mentioned drugs using a simple keyword search... Does how often they mention drugs correlate to how they end up dying?
+      </p>
+      <img src="mac-millers-car.jpg" alt="Mac Miller's Mercedes after the crash">
     </section>
 
     <section id='scrolly-side'>
@@ -160,16 +255,14 @@
         <!--  step text   -->
         <article>
           <div class='step' data-url='visualisation/11761938' data-index='0'>
-            <h2 style="color:#CE25AA;">Drugs</h2>
+            <h2 style="color:#CE25AA;"><b>Drugs</b></h2>
             <p>This chart shows how many times, out of 35,000 lyrics, a drug-related word was detected for each of these
               rappers. A ______ colored bar means that
               the rapper died from overdosing.
             </p>
-            <p>You can see the full list of drug-related keywords I searched for HERE
-            </p>
           </div>
           <div class='step' data-url='visualisation/11761931' data-index='1'>
-            <h2 style="color:#FC7E1D">Violence</h2>
+            <h2 style="color:#FC7E1D"><b>Violence</b></h2>
             <p>What about violence? In recent years, XXXTentacion and Takeoff were both shot. If we go back to the 90's,
               we'll find plenty more rappers that have died
               of violent causes, including Biggie and 2Pac.
@@ -178,25 +271,24 @@
               colored bar means that
               the rapper died from a violent cause, like getting shot or stabbed.
             </p>
-            <p>You can see the full list of violence-related keywords I searched for HERE</p>
           </div>
           <div class='step' data-url='visualisation/11761920' data-index='2'>
-            <h2 style="color:#EFB521">Death</h2>
+            <h2 style="color:#EFB521"><b>Death</b></h2>
             <p>There are many other words for death that don't necessarily have anything to do with drugs or violence.
               This chart shows how many times the rapper talked about death
               by counting the number of times they said words like "death", "suicide", or "void".
             </p>
-            <p>You can see the full list of death-related keywords I searched for HERE</p>
           </div>
           <div class='step' data-url='visualisation/11762492' data-index='3'>
-            <h2 style="color:#D40000">All Deadly Words Combined</h2>
+            <h2 style="color:#D40000"><b>All Deadly Words Combined</b></h2>
             <p>Let's combine all the words we've counted so far (drugs, violence, and death-related words) and call them
               "Deadly Words" with the intent to see whether or not
               rappers are more likely to die of causes that are not natural or accidental if they use more "Deadly
               Words".
             </p>
-            <p>You can see the full list of "Deadly Words" HERE</p>
-            <p>It is apparent with a glance of this chart that there is some relationship between how much people rap about deadly topics and how they die</p>
+            <p>It is apparent with a glance of this chart that there is some relationship between how much people rap
+              about deadly topics and how they die</p>
+              <p id="list">You can see the full list of "Deadly Words" <a href="https://docs.google.com/document/d/1l9ut2giEsxTHd9BDAAgGBM8kXXbwx3i2fQgTjUpSALs/edit?usp=sharing" target="_blank">here.</a></p>
           </div>
           <div id='blankspace'>
             <p></p>
@@ -205,16 +297,40 @@
 
         <!--  sticky graphic   -->
         <figure class='sticky'>
-          <div id='index-0' class="flourish-embed flourish-chart" data-src="visualisation/11761938">
+          <div id='index-0' class="flourish-embed flourish-chart" data-src="visualisation/11761938"
+            data-pic="url('juice-wrld.jpg')">
+            <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/3oDkdAySo1VQQG0ptV7uwa?utm_source=generator&theme=0"
+              width="100%" height="152" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
             <script src="https://public.flourish.studio/resources/embed.js"></script>
           </div>
-          <div id='index-1' class="flourish-embed flourish-chart" data-src="visualisation/11761931">
+          <div id='index-1' class="flourish-embed flourish-chart" data-src="visualisation/11761931"
+            data-pic="url('biggie.jpg')">
+            <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/4aOOExMBUyxKnEYb39SrTg?utm_source=generator&theme=0"
+              width="100%" height="152" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
             <script src="https://public.flourish.studio/resources/embed.js"></script>
           </div>
-          <div id='index-2' class="flourish-embed flourish-chart" data-src="visualisation/11761920">
+          <div id='index-2' class="flourish-embed flourish-chart" data-src="visualisation/11761920"
+            data-pic="url('mac-miller.jpg')">
+            <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/5bJ1DrEM4hNCafcDd1oxHx?utm_source=generator&theme=0"
+              width="100%" height="152" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
             <script src="https://public.flourish.studio/resources/embed.js"></script>
           </div>
-          <div id='index-3' class="flourish-embed flourish-chart" data-src="visualisation/11762492">
+          <div id='index-3' class="flourish-embed flourish-chart" data-src="visualisation/11762492"
+            data-pic="url('takeoff.jpg')">
+            <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/5g9lS8deSIxItFBmZRC4vN?utm_source=generator&theme=0"
+              width="100%" height="152" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
             <script src="https://public.flourish.studio/resources/embed.js"></script>
           </div>
         </figure>
@@ -223,10 +339,14 @@
 
     <div id='conclusion'>
       <p><b>So what does it all mean?</b></p>
-      <p>Let's be honest, manifestation is more of a buzz word than an indisputable reason why we are seeing this correlation between what rappers rap about 
-        and how they end up dying. It makes sense that people make art about what they already know and what they are exposed to regularly. It also makes sense 
-        that making art glorifying such negative topics perpetuates the same behavior. Personally, I think it is pointless to investigate what came first between the 
-        environment or the art. Rather, we should make an effort to conciously notice what we are giving our attention to and how that is translating into our
+      <p>Let's be honest, manifestation is more of a buzz word than an indisputable reason why we are seeing this
+        correlation between what rappers rap about
+        and how they end up dying. It makes sense that people make art about what they already know and what they are
+        exposed to regularly. It also makes sense
+        that making art glorifying such negative topics perpetuates the same behavior. Personally, I think it is
+        pointless to investigate what came first between the
+        environment or the art. Rather, we should make an effort to conciously notice what we are giving our attention
+        to and how that is translating into our
         everyday lives. <br>
       </p>
     </div>
@@ -288,7 +408,6 @@
             sticky.select('#index-3').style('z-index', '999');
             break;
         }
-
         container.select('.flourish-embed').attr('data-src', picture);
       }
 
