@@ -97,8 +97,8 @@
 
     #scrolly-side .scrolly article .step {
       min-height: auto;
-      margin-top: 10em;
-      margin-bottom: 10em;
+      margin-top: 15em;
+      margin-bottom: 20em;
       background-color: #BFBFBF;
       border-radius: 15px;
       transition: background-color 250ms ease-in-out;
@@ -168,15 +168,34 @@
       color: #FC7E1D;
     }
 
+    #era {
+      text-align: left;
+      font-size: smaller;
+      margin-top: 100px;
+      margin-left: 25%;
+      margin-right: 25%;
+      margin-bottom: 100px;
+    }
+
+    #eraGraphic {
+      margin-left: 10em;
+      margin-right: 10em;
+    }
+
     #conclusion {
       text-align: left;
-      margin: 200px;
+      font-size: smaller;
+      margin-top: 100px;
+      margin-left: 25%;
+      margin-right: 25%;
+      margin-bottom: 100px;
     }
 
     #ending {
       text-align: left;
-      margin-left: 200px;
-      margin-right: 200px;
+      font-size: smaller;
+      margin-left: 25%;
+      margin-right: 25%;
       margin-bottom: 200px;
     }
   </style>
@@ -243,8 +262,10 @@
         Maybe being in the rap game pushes them to make explicit art, eventually manifesting in their real lives. Maybe
         all of the above.
         I'll let you decide, but I'll give you some numbers that might help.<br><br>
-        I took ____ rappers, aggregated 35,000 lyrics from each rapper (drawing from their most popular albums) and counted the number of times
-        they mentioned drugs using a simple keyword search... Does how often they mention drugs correlate to how they end up dying?
+        I took 81 rappers, aggregated 35,000 lyrics from each rapper (drawing from their most popular albums) and
+        counted the number of times
+        they mentioned drugs using a simple keyword search... Does how often they mention drugs correlate to how they
+        end up dying?
       </p>
       <img src="mac-millers-car.jpg" alt="Mac Miller's Mercedes after the crash">
     </section>
@@ -257,7 +278,7 @@
           <div class='step' data-url='visualisation/11761938' data-index='0'>
             <h2 style="color:#CE25AA;"><b>Drugs</b></h2>
             <p>This chart shows how many times, out of 35,000 lyrics, a drug-related word was detected for each of these
-              rappers. A ______ colored bar means that
+              rappers. A purple colored bar means that
               the rapper died from overdosing.
             </p>
           </div>
@@ -267,7 +288,7 @@
               we'll find plenty more rappers that have died
               of violent causes, including Biggie and 2Pac.
             </p>
-            <p>This chart shows how many times a violence-related word was detected for each of these rappers. A ______
+            <p>This chart shows how many times a violence-related word was detected for each of these rappers. An orange
               colored bar means that
               the rapper died from a violent cause, like getting shot or stabbed.
             </p>
@@ -276,22 +297,25 @@
             <h2 style="color:#EFB521"><b>Death</b></h2>
             <p>There are many other words for death that don't necessarily have anything to do with drugs or violence.
               This chart shows how many times the rapper talked about death
-              by counting the number of times they said words like "death", "suicide", or "void".
+              by counting the number of times they said words like "death", "suicide", or "void". A yellow colored bar
+              means that the rapper died an unnatural death.
             </p>
           </div>
           <div class='step' data-url='visualisation/11762492' data-index='3'>
             <h2 style="color:#D40000"><b>All Deadly Words Combined</b></h2>
             <p>Let's combine all the words we've counted so far (drugs, violence, and death-related words) and call them
               "Deadly Words" with the intent to see whether or not
-              rappers are more likely to die of causes that are not natural or accidental if they use more "Deadly
+              rappers are more likely to die of unnatural causes if they use more "Deadly
               Words".
             </p>
-            <p>It is apparent with a glance of this chart that there is some relationship between how much people rap
+            <p>It is apparent with a glance of these charts that there is some relationship between how much people rap
               about deadly topics and how they die</p>
-              <p id="list">You can see the full list of "Deadly Words" <a href="https://docs.google.com/document/d/1l9ut2giEsxTHd9BDAAgGBM8kXXbwx3i2fQgTjUpSALs/edit?usp=sharing" target="_blank">here.</a></p>
+            <p id="list">You can see the full list of "Deadly Words" <a
+                href="https://docs.google.com/document/d/1l9ut2giEsxTHd9BDAAgGBM8kXXbwx3i2fQgTjUpSALs/edit?usp=sharing"
+                target="_blank">here.</a></p>
           </div>
           <div id='blankspace'>
-            <p></p>
+            <p style="color:#FFFFFF">blank space</p>
           </div>
         </article>
 
@@ -337,13 +361,25 @@
       </div>
     </section>
 
+    <div id="era">
+      <p>Did different eras of rap talk about different deadly words? Maybe what is cool to rap about has changed over time. In the following chart, 
+        I sort the 81 rappers into categories based on the decade they are from. The sections of each bar show the breakdown (in percent) of what deadly words they talked about as an era. 
+      </p>
+    </div>
+
+    <div id="eraGraphic">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/12086928"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </div>
+
+    
+
     <div id='conclusion'>
-      <p><b>So what does it all mean?</b></p>
+      <h2 style="text-align: center;"><b>Deriving Meaning</b></h2><br>
       <p>Let's be honest, manifestation is more of a buzz word than an indisputable reason why we are seeing this
-        correlation between what rappers rap about
+        correlation between how often rappers rap about deadly words 
         and how they end up dying. It makes sense that people make art about what they already know and what they are
         exposed to regularly. It also makes sense
-        that making art glorifying such negative topics perpetuates the same behavior. Personally, I think it is
+        that making art glorifying such negative topics perpetuates the same behavior. <br><br>Personally, I think it is
         pointless to investigate what came first between the
         environment or the art. Rather, we should make an effort to conciously notice what we are giving our attention
         to and how that is translating into our
@@ -352,13 +388,15 @@
     </div>
 
     <div id='ending'>
-      <p><b>Some questions to reflect on</b></p>
+      <h2 style="text-align: center;"><b>Reflection Questions</b></h2>
       <ul>
-        <li>How can I be concious about what I "manifest" in my own life?</li>
-        <li>What kind of environment do I want to expose myself to?</li>
+        <li>Can and should we use this information, assuming it can indeed predict causes of unnatural death, to identify and help individuals/groups?</li>
+        <li>What can explain the increase in drug-related rapping in the 21st century? Or, conversely, the decrease in violence/death-related rapping.</li>
         <li>Can other people's art translate into my own life as I expose myself to it?</li>
+        <li>How can I be concious about what I "manifest" into my own life?</li>
+        <li>What kind of environment do I want to expose myself to?</li>
       </ul>
-      <p>Thank you for reading my story!</p>
+      <br><br><br><p style="text-align: center;">Thank you for reading my story!</p>
     </div>
 
     <script src="https://unpkg.com/d3@5.4.0/dist/d3.min.js"></script>
